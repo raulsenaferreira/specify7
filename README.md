@@ -1,5 +1,3 @@
-
-
 Developer Instructions
 ========================
 
@@ -29,7 +27,11 @@ On Ubuntu:
 
     sudo apt-get install \
         git python-pip python-dev libmysqlclient-dev \
-        build-essential nodejs-legacy
+        build-essential curl
+
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+
+    sudo apt-get install nodejs
 
 To install Specify6, follow the Specify6 installation instructions, or
 copy an existing installation if you have one.
@@ -53,6 +55,15 @@ requirements global which requires running pip as superuser.
 
     pip install -r specify7/requirements.txt
 
+
+Generate the front end.
+-----------------------
+The Javascript dependencies and sources for the browser need to be
+packaged.
+
+    make -C specify7
+
+When the Specify7 repository is updated, this step should be repeated.
 
 Adjust settings files.
 -------------------------
@@ -101,18 +112,6 @@ following packages are needed:
 On Ubuntu:
 
     sudo apt-get install apache2 libapache2-mod-wsgi
-
-
-Optimizing JS and CSS files.
-----------------------------
-The Javascript and CSS files that comprise the web app can be
-optimized by `requirejs`. Then, instead of serving each file
-separately, they are packaged into single optimized `main-built.js`
-and `main-built.css` files.
-
-    make -C specify7/specifyweb
-
-When the Specify7 repository is updated, this step should be repeated.
 
 Setup Apache.
 -------------

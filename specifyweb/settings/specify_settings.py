@@ -15,6 +15,9 @@ DATABASE_PORT = ''
 MASTER_NAME = 'MasterUser'
 MASTER_PASSWORD = 'MasterPassword'
 
+# Select the schema localization language.
+SCHEMA_LANGUAGE = 'en'
+
 # The Specify web attachement server URL.
 WEB_ATTACHMENT_URL = "http://example.com/web_asset_store.xml"
 
@@ -30,6 +33,10 @@ WEB_ATTACHMENT_REQUIRES_KEY_FOR_GET = False
 # Report runner service
 REPORT_RUNNER_HOST = ''
 REPORT_RUNNER_PORT = ''
+
+# Workbench uploader log directory.
+# Must exist and be writeable by the web server process.
+WB_UPLOAD_LOG_DIR = "/var/cache/specify_wb_upload/"
 
 # To allow anonymous use, set ANONYMOUS_USER to a Specify username
 # to use for anonymous access.
